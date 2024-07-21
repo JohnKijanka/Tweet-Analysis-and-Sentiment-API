@@ -17,16 +17,16 @@ Make sure you have the following installed:
 
 1. Clone the repository:
 
-    '''bash
+    ```bash
     git clone https://github.com/JohnKijanka/Tweet-Analysis-and-Sentiment-API.git
     cd Tweet-Analysis-and-Sentiment-API
-    '''
+    ```
 
 2. Install the required Python packages:
 
-    '''bash
+    ```bash
     pip install -r requirements.txt
-    '''
+    ```
 
 ### Running the Application
 
@@ -34,17 +34,17 @@ Make sure you have the following installed:
 
 To start the backend, run:
 
-'''bash
+```bash
 python .\Backend\main.py
-'''
+```
 
 #### Frontend
 
 To start the frontend, run:
 
-'''bash
+```bash
 streamlit run .\Frontend\main.py
-'''
+```
 
 ## Usage
 
