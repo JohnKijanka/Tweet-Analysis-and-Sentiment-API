@@ -5,6 +5,7 @@ from typing import List, Tuple
 import uvicorn
 import pandas as pd
 import json
+import os
 from typing import List, Dict, Any
 from database import (
     create_connection,
@@ -31,8 +32,14 @@ from similarity import (
 # Set the option to display the full content of each column
 pd.set_option('display.max_colwidth', None)
 
+# Get the current directory
+current_directory = os.path.dirname(__file__)
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_directory)
+
 # Database configuration
-DATABASE = "entries.db"
+DATABASE = os.path.join(parent_directory, 'entries.db')
 
 # Pydantic models
 class Entry(BaseModel):
@@ -58,7 +65,7 @@ async def lifespan(app: FastAPI):
     if not entries_table_exists:
 
         # Load the data
-        file_path = '17616581.tweets.jl'
+        file_path = os.path.join(parent_directory, '17616581.tweets.jl')
         data = []
 
         with open(file_path, 'r', encoding='utf-8') as file:
