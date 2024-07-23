@@ -116,17 +116,6 @@ async def read_random_entry():
         raise HTTPException(status_code=404, detail="No entries found")
     return Entry(text=row[1], scores=row[2], sentiment=row[3])
 
-@app.get("/entries/", response_model=List[Entry])
-async def read_entries():
-    """
-    Retrieve all entries from the database.
-
-    Returns:
-        List[Entry]: A list of all entries in the database.
-    """
-    rows = await get_all_entries(app.state.conn)
-    return [Entry(text=row[1], scores=json.loads(row[3]), sentiment=row[4]) for row in rows]
-
 @app.get("/process_string", response_model=Dict[str, Any])
 async def process_string(input_string: str):
     """

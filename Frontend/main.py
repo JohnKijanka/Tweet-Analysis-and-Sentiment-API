@@ -37,21 +37,6 @@ if st.button("Read Random Entry"):
     else:
         st.error(f"Error: {response.status_code} - {response.text}")
 
-# Section for Read Entries
-st.header("Read All Entries")
-
-if st.button("Read All Entries"):
-    response = requests.get(f"{BASE_URL}/entries/")
-    if response.status_code == 200:
-        entries = response.json()
-        for entry in entries:
-            st.write(f"**Text:** {entry['text']}")
-            st.write(f"**Scores:** {entry['scores']}")
-            st.write(f"**Sentiment:** {entry['sentiment']}")
-            st.write("---")  # Add a separator between entries
-    else:
-        st.error(f"Error: {response.status_code} - {response.text}")
-
 # Section for Date filter
 st.header("Filter Entries by Date")
 
