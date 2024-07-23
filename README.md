@@ -60,8 +60,6 @@ streamlit run .\Frontend\main.py
 
 * Random Entry: Click the button to fetch a random entry.
 
-* All Entries: Click the button to retrieve and view all entries.
-
 * Filter by Date: Input the date range and click to filter entries.
 
 * Search by Keyword: Enter the keyword and click to search.
